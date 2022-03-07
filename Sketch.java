@@ -7,8 +7,12 @@ import processing.core.PApplet;
 
 public class Sketch extends PApplet {
 
+  float randHouseX = random(0, 500);
+  float randHouseY = random(0, 500);
+  // rect(130,160,240,240)
+  
   public void settings() {
-    size(400, 400);
+    size(500, 500);
   }
 
   // Set background to blue
@@ -21,43 +25,41 @@ public class Sketch extends PApplet {
     // Draw grass + dirt
     noStroke();
     fill(57, 184, 65);
-    rect(0, height/1.25f, width/1f, height/10f);
+    rect(0,400,500,50);
 
     fill(107, 68, 27);
-    rect(0, height/1.11f, width/1f, height/10f);
+    rect(0,450,500,50);
  
     // Set stroke settings for house + roof
-    stroke(0, 0, 0);
+    stroke(0,0,0);
     strokeWeight(1);
-    
+
     // Draw house + roof
     fill(148, 61, 61);
-    rect(width/3.85f, height/3.125f, width/2.083f, height/2.083f);
+    rect(130,160,240,240);
 
     fill(130, 127, 127);
-    rect(width/1.61f, height/6.25f, width/12.5f, height/8.33f);    
-    triangle(width/5f, height/3.125f, width/2f, height/6.25f, width/1.25f, height/3.125f);
+    rect(310,80,40,60);
+    triangle(100, 160, 250, 80, 400, 160);
 
     // Draw door and windows
     fill(79, 5, 5);
-    rect(width/2.27f, height/1.67f, width/8.33f, height/5f);
-    fill(110, 0, 0);
-    ellipse(width/1.85f, height/1.43f, width/50f, height/50f);
+    rect(220,300,60,100);
 
     fill(203, 212, 211);
-    ellipse(width/2.78f, height/1.85f, width/10f, height/8.33f);
-    ellipse(width/1.563f, height/1.85f, width/10f, height/8.33f);
-    rect(width/2.27f, height/2.78f, width/8.33f, height/10f);
+    ellipse(180, 270, 50, 60);
+    ellipse(320, 270, 50, 60);
+    rect(220,180,60,50);
 
     // Draw window panes
-    stroke(0, 0, 0);
-    line(width/2f, height/2.78f, width/2f, height/2.17f); 
-    line(width/2.27f, height/2.44f, width/1.786f, width/2.44f); 
+    stroke(0,0,0);
+    line(250, 180, 250, 230); 
+    line(220, 205, 280, 205); 
 
     // Draw sun and clouds
     noStroke();
     fill(255, 251, 33);
-    ellipse(width/12.5f, height/12.5f, width/8.33f, height/8.33f);
+    ellipse(40, 40, 60, 60);
 
     // Set variables to current time
     var currentHour = hour();
@@ -68,9 +70,9 @@ public class Sketch extends PApplet {
     
     fill(255);
     noStroke();
-    textSize(12);
+    textSize(18);
     
-    text(currentTime, 345, 395);
+    text(currentTime, 420, 495);
   }
 
   
