@@ -85,7 +85,7 @@ public class Sketch extends PApplet {
     textSize(18);
     
     text(currentTime, 420, 495);
+    
   }
 
-  
 }
