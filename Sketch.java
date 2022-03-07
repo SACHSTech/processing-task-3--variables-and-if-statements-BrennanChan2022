@@ -1,7 +1,7 @@
 import processing.core.PApplet;
 
   /**
-  * A program Sketch.java that draws a house in random locations with random background colours depending on the location.
+  * A program Sketch.java that draws a house in random locations with different background colours depending on the location.
   * @author: B. Chan
   */
 
@@ -9,15 +9,26 @@ public class Sketch extends PApplet {
 
   float randHouseX = random(100, 400);
   float randHouseY = random(100, 400);
-  // rect(130,160,240,240)
   
   public void settings() {
     size(500, 500);
   }
 
-  // Set background to depending on location
+  // Set background depending on location
   public void setup() {
-    background(176, 227, 255);
+    
+    if (randHouseX <= 250 && randHouseY <= 250){
+      background(7, 16, 54);
+      }
+    else if (randHouseX >= 250 && randHouseY <= 250){
+      background(176, 227, 255);
+      }
+    else if (randHouseX <= 250 && randHouseY >= 250){
+      background(0, 92, 184);
+      }
+    else if (randHouseX >= 250 && randHouseY >= 250){
+      background(204, 108, 53);
+      }
   }
 
   public void draw() {
@@ -66,7 +77,8 @@ public class Sketch extends PApplet {
     var currentMinute = minute();
     var currentSecond = second();
     
-    var currentTime = nf((currentHour - 5), 2) + ":" + nf(currentMinute, 2) + ":" + nf(currentSecond,2);
+    var currentTime = nf((currentHour - 5), 2) + ":" + nf(currentMinute, 
+ 2) + ":" + nf(currentSecond, 2);
     
     fill(255);
     noStroke();
